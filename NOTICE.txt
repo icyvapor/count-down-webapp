@@ -1,0 +1,6 @@
+A simple count down timer webapp
+
+This toy webapp borrowed quite a bit from part of Dan Taylor's national-rail project, which
+includes an AngularJS departure board. My toy app is hacked together based on this UI. 
+
+https://github.com/DanteLore/national-rail

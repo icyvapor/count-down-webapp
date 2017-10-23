@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="departuresApp">
+<head>
+    <title>Alice Terminal</title>
+    <link href="https://bootswatch.com/cyborg/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: led;
+			src: url('signus_led-s-webfont.woff2') format('woff2'),
+				 url('signus_led-s-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+        }
+        @font-face {
+            font-family: led1;
+			src: url('signus_led-s-webfont.woff2') format('woff2'),
+				 url('signus_led-s-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: bold;
+        }
+
+        .container-fluid {
+            max-width:70%;
+        }
+        h1 {
+ 			font-family: led;
+            font-weight: bold;
+            font-size: 7em;
+			color: yellow;
+        }
+        .success {
+ 			font-family: led;
+            font-weight: normal;
+            font-size: 5em;
+			color: green;
+        }
+        .failure {
+ 			font-family: led;
+            font-weight: normal;
+            font-size: 5em;
+			color: red;
+        }
+        .label {
+            font-family: led;
+            color: white;
+			font-weight: normal;
+            font-size: 44px;
+            wrap: nowrap;
+        }
+        .clock {
+            font-family: led;
+            color: red;
+            font-size: 60pt;
+            padding-top: 24px;
+            padding-right: 40px;
+            text-align: right;
+            wrap: nowrap;
+        }
+		.button {
+			background-color: #e7e7e7;
+			color: black;
+		    border: none;
+    		padding: 5px 15px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+ 			font-family: led1;
+    		font-size: 40px;
+    		margin: 50px 20px;
+    		cursor: pointer;
+		}
+		.row {
+			text-align: center;
+		}
+		input[type="text"]
+		{
+			font-size:24px;
+			color: blue;
+		}
+    </style>
+</head>
+<body>
+  
+<script type="text/ng-template" id="board.html">
+	<div class="container-fluid">
+    	<div class="row">
+            	<h1>Self Destruction Countdown!</h1>
+      	</div>
+      	<div class="row clock">
+            	{{ clock }}
+      	</div>
+		<div class="row">
+			<label class="label">Passcode: </label>
+			<input type="text" ng-model="passcode">
+			<button class="button" ng-click="diffuse()">Abort</button>
+		</div>
+		<div class="row">
+			<div class="success">{{successMsg}}</div>
+		</div>
+		<div class="row">
+			<div class="failure">{{failureMsg}}</div>
+		</div>
+	</div>
+</script>
+	
+    <div ng-view>
+    </div>
+
+    <br/><br/><br/><br/><br/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
